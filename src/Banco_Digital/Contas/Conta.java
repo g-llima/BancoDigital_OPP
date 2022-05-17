@@ -21,11 +21,19 @@ public abstract class Conta implements ContaInterface {
 
     @Override
     public void sacar(double valor) {
+        if (this.saldo < valor || valor <= 0) {
+            System.out.println("Valor invalido para sacar.");
+            return;
+        }
         this.saldo -= valor;
     }
 
     @Override
     public void depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor invalido para depositar.");
+            return;
+        }
         this.saldo += valor;
     }
 
@@ -42,7 +50,6 @@ public abstract class Conta implements ContaInterface {
         System.out.printf("Numero da conta: %d\n", this.numeroConta);
         System.out.printf("Saldo: %.2f\n", this.saldo);
     }
-
 
     public int getAgencia() {
         return agencia;

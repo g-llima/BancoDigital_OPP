@@ -20,7 +20,7 @@ public class Main {
         banco.mostrarClientes();
 
         cc.depositar(100);
-        cc.transferir(cop, 70);
+        cc.transferir(cop, -70);
 
         cc.imprimirExtrato();
         cop.imprimirExtrato();
